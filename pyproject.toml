@@ -1,0 +1,33 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name        = "query_tws"
+version     = "0.1.0"
+description = "A Python library for interacting with Interactive Brokers TWS API"
+readme      = "README.md"
+requires-python = ">=3.10"
+
+# ---------------------------------------------------------------------------
+# Runtime dependencies
+# ---------------------------------------------------------------------------
+# Note: ibapi is NOT available on PyPI and must be installed manually from
+# the IBKR API download before installing this library.
+# See README.md — Prerequisites for instructions.
+# ---------------------------------------------------------------------------
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["query_tws*"]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: requires a live TWS or IB Gateway connection (deselect with '-m not integration')",
+]
+testpaths = ["tests"]
