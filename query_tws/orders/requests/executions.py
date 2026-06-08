@@ -196,10 +196,9 @@ class ExecutionsMixin:
                 detail["commission"] = commissionAndFeesReport
                 logger.debug(
                     "commissionAndFeesReport attached: execId=%s "
-                    "commission=%s currency=%s",
+                    "commission=%s",
                     exec_id,
-                    commissionAndFeesReport.commission,
-                    commissionAndFeesReport.currency,
+                    commissionAndFeesReport,
                 )
                 
             else:
